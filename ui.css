@@ -1,0 +1,159 @@
+body {
+  background: #000000;
+  margin: 0px;
+  color: #FFFFFF;
+  font-family: Manrope;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.progress {
+  color: #828282;
+  font-family: Manrope;
+  margin-top: 13px;
+  display: block;
+  margin: 12px;
+}
+
+.slogan {
+  margin: 5px;
+}
+
+.desc {
+  color: #C8C8C8;
+  margin: 5px;
+  margin-top: 15px;
+}
+
+button {
+  height: 50px;
+  width: 90%;
+  background: linear-gradient(195deg, #FFFFFF, #FFFFFF);
+  border-radius: 10px;
+  font-family: Dm sans;
+  color: #000000;
+  display: block;
+  margin-left: auto;
+  font-family: dm sans;
+  margin-right: auto;
+  margin-top: 160px;
+  border: none;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #7929FF;
+  color: #FFFFFF;
+  transition: 0.5s;
+}
+
+.Terms {
+  color: #4C4A76;
+  font-size: 12px;
+  margin: 12px;
+  text-align: center;
+}
+
+.container {
+  background: #060608;
+  margin: 30px;
+  border: 1px solid #161622;
+  border-radius: 15px;
+  display: flexbox;
+  height: 90px;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.progress-bar {
+  margin-top: 10px;
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background-color: #201F2E;
+  border-radius: 5px;
+}
+
+.progress-line {
+  height: 100%;
+  width: 33%; /* A largura vai ser modificada dinamicamente */
+  background: linear-gradient(195deg, #0073FF, #5E57FF);
+  border-radius: 5px;
+}
+
+.progress-points {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #FDFCFF;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Aqui vai a animação do progresso */
+.progress-dot.active {
+  background-color: #FFFFFF; /* Muda a cor para branco quando a etapa é concluída */
+}
+.link{
+  color: #10C9FF;
+}
+a{
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Animação geral */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Aplicando animação nos elementos */
+.slogan, .desc, .progress, .progress-bar, button, .Terms {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.container {
+  opacity: 0;
+  animation: scaleFade 0.8s ease-out forwards;
+}
+
+/* Definir tempos diferentes pra não entrarem todos de uma vez */
+.slogan { animation-delay: 0.9s; }
+.desc { animation-delay: 0.4s; }
+.progress { animation-delay: 0.6s; }
+.progress-bar { animation-delay: 0.8s; }
+button { animation-delay: 1s; }
+.Terms { animation-delay: 1.2s; }
+.container { animation-delay: 0.5s; }
